@@ -16,8 +16,8 @@ Supports web apps (taken automatically with a headless browser), macOS desktop a
 ## Install
 
 ```bash
-git clone <repository-url> usermanual-skill
-cd usermanual-skill
+git clone https://github.com/ryanma3003/ezusermanual
+cd ezusermanual
 ./install.sh
 ```
 
