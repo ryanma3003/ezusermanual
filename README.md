@@ -71,29 +71,3 @@ The agent will:
 5. Check the rendered pages and fix problems before handing the files over.
 
 To sign in, you can either give test credentials (used through environment variables, never written to files) or sign in yourself in a browser window the agent opens.
-
-## Troubleshooting
-
-| Problem | Fix |
-|---|---|
-| `LibreOffice not found` | Install LibreOffice, or `export SOFFICE=/path/to/soffice` |
-| macOS desktop screenshots fail | Give your terminal app **Screen Recording** (and **Accessibility**) permission in System Settings › Privacy & Security, then restart it |
-| Chromium fails to start on Linux | `~/.local/share/user-manual-skill/venv/bin/python -m playwright install-deps chromium` |
-| Table of contents looks different in Word | Page numbers are computed with LibreOffice's layout. In Word, right-click the table of contents › **Update Field** |
-
-## Layout
-
-```
-install.sh                         multi-agent installer
-skills/user-manual/
-  SKILL.md                         workflow the agent follows
-  references/writing-style.md      plain-language rules + word list (EN/ID)
-  references/manual-spec.md        manual.json format
-  references/screenshots.md        web / desktop / mobile capture and annotation
-  scripts/setup.sh, run.sh         dependency setup and tool runner
-  scripts/capture_web.py           inspect / login / shoot (Playwright)
-  scripts/capture_macos.sh         macOS window capture
-  scripts/capture_mobile.sh        Android / iOS Simulator capture
-  scripts/annotate.py              boxes, numbered markers, blur, coordinate grid
-  scripts/build_manual.py          manual.json → DOCX / PDF
-```
